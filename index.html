@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fcfaf6" />
+    <title>Lounaslista — Päivän parhaat lounaat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#"><span class="brand-mark">L</span>lounaslista</a>
+      <div class="header-actions">
+        <span class="updated"><i></i> Päivitetty juuri nyt</span>
+        <button class="icon-button" id="themeButton" aria-label="Vaihda väriteemaa">◐</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow" id="dateLabel">TÄNÄÄN · MAANANTAI 12. ELOKUUTA</p>
+        <h1>Mihin lounaalle<br /><em>tänään?</em></h1>
+        <p class="intro">Suosikkipaikkasi, päivän annokset ja aukioloajat yhdellä silmäyksellä.</p>
+        <div class="controls">
+          <div class="segmented" role="group" aria-label="Rajaa ravintoloita">
+            <button class="active" data-filter="all">Kaikki <span id="allCount">4</span></button>
+            <button data-filter="open">Avoinna <span id="openCount">3</span></button>
+            <button data-filter="favorite">Tallennetut <span id="favCount">3</span></button>
+          </div>
+          <button class="add-button" id="openDialog">+ Lisää ravintola</button>
+        </div>
+      </section>
+
+      <section class="restaurant-grid" id="restaurantGrid" aria-live="polite"></section>
+      <p class="empty" id="emptyState" hidden>Ei osumia tällä rajauksella.</p>
+    </main>
+
+    <footer><span>LOUNASLISTA</span><span>•</span><span>Suunnittele lounaasi paremmin</span></footer>
+
+    <dialog id="restaurantDialog">
+      <form id="restaurantForm">
+        <div class="dialog-heading"><div><p class="eyebrow">OMA LISTASI</p><h2>Lisää ravintola</h2></div><button type="button" class="icon-button" id="closeDialog" aria-label="Sulje">×</button></div>
+        <label>Nimi<input required name="name" placeholder="Esim. Kampin Sushi" /></label>
+        <label>Verkkosivun osoite<input required type="url" name="url" placeholder="https://…" /></label>
+        <label>Aukioloajat (valinnainen)<input name="hours" placeholder="Ma–Pe 10.30–14.00" /></label>
+        <button class="save-button" type="submit">Lisää lounaslistaan</button>
+        <p class="dialog-note">Uusien paikkojen ruokalistat lisätään automaattisesti, kun liität sovellukseen oman ruokalistalähteesi.</p>
+      </form>
+    </dialog>
+    <template id="cardTemplate">
+      <article class="restaurant-card">
+        <div class="card-top"><div class="restaurant-meta"><span class="restaurant-type"></span><h2></h2></div><button class="heart" aria-label="Tallenna suosikkeihin">♡</button></div>
+        <div class="status-row"><span class="status-dot"></span><span class="status-text"></span><span class="hours"></span></div>
+        <div class="menu"></div>
+        <div class="card-bottom"><span class="price"></span><a target="_blank" rel="noopener">Katso ruokalista <span>↗</span></a></div>
+      </article>
+    </template>
+    <script src="app.js"></script>
+  </body>
+</html>
