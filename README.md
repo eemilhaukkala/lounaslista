@@ -7,7 +7,7 @@ Tyylikäs, responsiivinen selainpohjainen lounaslistasovellus. Se kokoaa suosikk
 1. Avaa `index.html` selaimessa tai julkaise repositorio GitHub Pagesissa.
 2. Lisää omia ravintoloita **Lisää ravintola** -painikkeella.
 3. Tallenna kiinnostavat paikat sydänpainikkeella. Valinnat säilyvät selaimen paikallisessa tallennustilassa.
-4. Valitse **Käytä sijaintiani**, jolloin sovellus ehdottaa lähimpiä tallennettuja ravintoloita ja tarjoaa karttahaun uusiin lähialueen lounaspaikkoihin. Sijaintia käytetään vain selaimessasi eikä tallenneta.
+4. Valitse **Käytä sijaintiani**, jolloin sovellus hakee OpenStreetMapista aidot lähialueen ravintolat, järjestää ne etäisyyden mukaan ja tarjoaa karttahaun. Sijaintia käytetään vain selaimessasi eikä tallenneta.
 
 ## GitHub Pages
 
@@ -25,7 +25,7 @@ Valitse GitHubissa kerran **Settings → Pages → Source: GitHub Actions**. Jok
 
 ## Ruokalistojen automaattinen haku
 
-Selain ei voi luotettavasti hakea kaikkien ravintoloiden sivuja suoraan CORS-rajoitusten vuoksi. Tuotantokäyttöön lisää palvelinpuolen rajapinta (esim. Cloudflare Worker, Vercel Function tai GitHub Action), joka hakee sallitut lähteet ja palauttaa yhtenäisen JSON-muodon. Käyttöliittymä on valmiiksi rakennettu tätä varten; nykyiset esimerkkilistat tekevät sovelluksesta heti demottavan ja käytettävän.
+Sovellus hakee paikkojen perustiedot OpenStreetMapista. Päivän ruokalistat eivät ole yhtenäisessä avoimessa tietolähteessä, joten sovellus ohjaa ravintolan omalle sivulle ruokalistan tarkistamista varten. Tarkempi menuintegraatio kannattaa toteuttaa palvelinpuolen rajapinnalla (esim. Cloudflare Worker tai Vercel Function) lähdekohtaisesti.
 
 ## Tekniikka
 
