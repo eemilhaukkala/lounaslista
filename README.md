@@ -7,6 +7,7 @@ Tyylikäs, responsiivinen selainpohjainen lounaslistasovellus. Se kokoaa suosikk
 1. Avaa `index.html` selaimessa tai julkaise repositorio GitHub Pagesissa.
 2. Lisää omia ravintoloita **Lisää ravintola** -painikkeella.
 3. Tallenna kiinnostavat paikat sydänpainikkeella. Valinnat säilyvät selaimen paikallisessa tallennustilassa.
+4. Valitse **Käytä sijaintiani**, jolloin sovellus ehdottaa lähimpiä tallennettuja ravintoloita ja tarjoaa karttahaun uusiin lähialueen lounaspaikkoihin. Sijaintia käytetään vain selaimessasi eikä tallenneta.
 
 ## GitHub Pages
 

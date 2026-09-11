@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="location.css" />
   </head>
   <body>
     <header class="topbar">
@@ -30,10 +31,17 @@
             <button data-filter="open">Avoinna <span id="openCount">3</span></button>
             <button data-filter="favorite">Tallennetut <span id="favCount">3</span></button>
           </div>
-          <button class="add-button" id="openDialog">+ Lisää ravintola</button>
+          <div class="control-actions">
+            <button class="location-button" id="locationButton">⌖ Käytä sijaintiani</button>
+            <button class="add-button" id="openDialog">+ Lisää ravintola</button>
+          </div>
         </div>
       </section>
 
+      <section class="nearby-section" id="nearbySection" hidden aria-live="polite">
+        <div class="nearby-heading"><div><p class="eyebrow">SINUN LÄHELLÄSI</p><h2>Lounasehdotukset <em>lähellä</em></h2></div><a id="mapSearch" target="_blank" rel="noopener">Etsi lisää kartalta ↗</a></div>
+        <p class="nearby-note" id="nearbyNote"></p><div class="nearby-list" id="nearbyList"></div>
+      </section>
       <section class="restaurant-grid" id="restaurantGrid" aria-live="polite"></section>
       <p class="empty" id="emptyState" hidden>Ei osumia tällä rajauksella.</p>
     </main>
